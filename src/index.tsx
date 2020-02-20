@@ -1,6 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import App from "./App";
+import Create from "./components/Create";
+
+import "./index.css";
+
+ReactDOM.render(
+  <Router>
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Anasayfa</Link>
+          </li>
+          <li>
+            <Link to="/create">Kitap Ekle</Link>
+          </li>
+        </ul>
+      </nav>
+
+      <Switch>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route path="/create">
+          <Create />
+        </Route>
+      </Switch>
+    </div>
+  </Router>,
+  document.getElementById("root")
+);

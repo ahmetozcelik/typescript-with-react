@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "noImplicitAny": false,
+    "noImplicitAny": false,// type check kapali duzeltilecek.
     "sourceMap": true,
     "target": "es6",
     "lib": [

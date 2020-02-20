@@ -1,10 +1,9 @@
-import React, { Component, BlockquoteHTMLAttributes } from "react";
-
+import React, { Component } from "react";
 class Search extends Component<{ books }, {}> {
   state = {
     search: ""
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({ search: e.target.value });
   };
   render() {
