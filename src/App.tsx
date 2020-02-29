@@ -1,20 +1,16 @@
 import React from "react";
+import axios from "axios";
 
 
 import Main from "./components/Main";
-import Create from "./components/Create";
 
 import "./App.css";
 
 class App extends React.Component {
   state = { books: [] };
   componentDidMount() {
-    fetch("https://5e31ca3eb92d240014ea4f58.mockapi.io/books")
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ books: data });
-      })
-      .catch(console.log);
+    axios.get("https://5e31ca3eb92d240014ea4f58.mockapi.io/books")
+      .then(res => {this.setState({books : res.data})})
   }
   render() {
     return (

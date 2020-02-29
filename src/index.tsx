@@ -9,8 +9,8 @@ import "./index.css";
 
 ReactDOM.render(
   <Router>
-    <div>
-      <nav>
+    <div className="w-75 mx-auto text-center">
+      <nav className="text-center">
         <ul>
           <li>
             <Link to="/">Anasayfa</Link>
