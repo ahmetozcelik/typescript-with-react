@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 class Search extends Component<{ books }, {}> {
   state = {
     search: ""
@@ -31,6 +32,8 @@ class Search extends Component<{ books }, {}> {
               <th scope="col">Kitap Adı</th>
               <th scope="col">Yazar</th>
               <th scope="col">Yayınevi</th>
+              <th scope="col">Kitap Detay</th>
+
             </tr>
           </thead>
           <tbody>
@@ -39,6 +42,7 @@ class Search extends Component<{ books }, {}> {
                 <td>{book.title}</td>
                 <td>{book.author}</td>
                 <td>{book.publisher}</td>
+                <td><Link to={"/de"}>Test</Link></td>
               </tr>
             ))}
           </tbody>
@@ -50,7 +54,7 @@ class Search extends Component<{ books }, {}> {
 
 const Main = ({ books }) => {
   return (
-    <div className="w-50 mx-auto">
+    <div className="w-75 mx-auto">
       <h1>Kitap Listesi</h1>
       <Search books={books} />
     </div>

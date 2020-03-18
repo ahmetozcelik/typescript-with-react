@@ -3,6 +3,7 @@
 - [x] arama yapılabilecek(kitap adı,yazar,yayınevi)
 - [x] yeni kitap ekleme
 - [ ] listeleme ve arama sonuçlarında kitapla ilgili detay sayfası
+- [ ] type check hatasi acilip duzeltmeler yapilacak.
 
 ## Kullanılacaklar
 - Restful API
@@ -10,6 +11,8 @@
 - Webpack
 - ReactJs
 - Typescript
+- Axios
+- Bootstrap
 
 ### Ek olarak
 - / listeleme için router

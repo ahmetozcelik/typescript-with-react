@@ -1,11 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import axios from "axios";
 
-import App from "./App";
+import Main from "./components/Main";
 import Create from "./components/Create";
+import Detail from "./components/Detail";
 
 import "./index.css";
+
+class App extends React.Component {
+  state = { books: [] };
+  componentDidMount() {
+    axios.get("https://5e31ca3eb92d240014ea4f58.mockapi.io/books")
+      .then(res => {this.setState({books : res.data})})
+  }
+  render() {
+    return (
+        <div className="App">
+              <Main books={this.state.books} />
+        </div>
+    );
+  }
+}
 
 ReactDOM.render(
   <Router>
@@ -20,13 +37,15 @@ ReactDOM.render(
           </li>
         </ul>
       </nav>
-
       <Switch>
         <Route exact path="/">
           <App />
         </Route>
         <Route path="/create">
           <Create />
+        </Route>
+        <Route path="/detail/:id" component={Detail}>
+          <Detail />
         </Route>
       </Switch>
     </div>
